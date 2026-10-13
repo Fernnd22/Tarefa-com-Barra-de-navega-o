@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-de-fundo-fechar-aviso: rgba(255, 1, 1, 0.721);
+    --cor-da-barra-topo: rgb(183, 242, 245);
+    --cor-de-fundo-aviso: rgb(48, 255, 221);
+    --cor-texto: rgb(49, 146, 199);
+    --cor-texto-aviso: rgba(255, 1, 1, 0.721);
+}
+
+.barra-topo {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-da-barra-topo);
+}
+
+.barra-topo ul {
+    list-style: none;
+}
+
+.barra-topo li {
+    float: left;
+    margin-right: 20px;
+}
+
+.aviso {
+    position: relative;
+    padding: 30px;
+    margin: 100px;
+    background-color: var(--cor-de-fundo-aviso);
+}
+
+#fechar-aviso {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--cor-de-fundo-fechar-aviso);
+    padding: 7px;
+}
+
+.mensagem {
+    color: var(--cor-texto-aviso);
+    font-weight: bold;
+}
+
+main p {
+    color: var(--cor-texto);
+}
+
+/* Não calculei nada porque a barra não tampou o conteúdo O_o */
+main {
+    margin-top: 50px;
+}
+
+/*
+1) Por que foi necessário adicionar espaço extra no topo do <main>? O que aconteceria sem esse ajuste? 
+R: Esse espaço serve pra compensar o que a barra tá tampando, assim não fica nenhum conteúdo debaixo dela.
+
+2) Qual é a diferença entre usar position: fixed na barra e position: absolute? O que mudaria no comportamento ao rolar a página?
+R: o fixed faz a barra ficar fixa na tela e se movimentar junto da tela, o absolute faz ela ficar parada na página normalmente.
+
+3) Se você remover o box-sizing: border-box, o que acontece com a largura da .barra-topo ao adicionar padding?
+Explique com base na fórmula de largura total do Box Model. 
+R: Sem isso o padding ultrapaça os 100%, passando da tela.

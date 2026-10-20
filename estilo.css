@@ -4,10 +4,12 @@
 
 :root {
     --cor-de-fundo-fechar-aviso: rgba(255, 1, 1, 0.721);
-    --cor-da-barra-topo: rgb(183, 242, 245);
-    --cor-de-fundo-aviso: rgb(48, 255, 221);
+    --cor-da-barra-topo: rgb(75, 169, 75);
+    --cor-de-fundo-aviso: rgb(43, 154, 98);
     --cor-texto: rgb(49, 146, 199);
-    --cor-texto-aviso: rgba(255, 1, 1, 0.721);
+    --cor-texto-aviso: rgba(255, 253, 253, 0.721);
+    --cor-de-fundo: rgb(99, 255, 99);
+    --cor-de-fundo2:rgb(1, 85, 1);
 }
 
 .barra-topo {
@@ -17,10 +19,35 @@
     width: 100%;
     padding: 15px;
     background-color: var(--cor-da-barra-topo);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#site {
+    color: var(--cor-texto-aviso);
+    font-size: 30px;
+    width: 100%;
+    margin: 10px;
+    float: left;
+    margin-left: 40px;
+    position: relative;
+}
+
+#login {
+    color: var(--cor-texto-aviso);
+    font-size: 20px;
+    position: absolute;
+    top: 34px;
+    right: 25px;
+    background-color: var(--cor-de-fundo2);
+    padding: 7px;
+    padding-right: 12px;
+    padding-left: 12px;
+    border-radius: 7px;
 }
 
 .barra-topo ul {
     list-style: none;
+    font-size: 18px;
 }
 
 .barra-topo li {
@@ -29,10 +56,12 @@
 }
 
 .aviso {
-    position: relative;
-    padding: 30px;
-    margin: 100px;
+    padding: 15px;
+    margin: 120px;
     background-color: var(--cor-de-fundo-aviso);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    position: relative;
 }
 
 #fechar-aviso {
@@ -40,12 +69,86 @@
     top: 0;
     right: 0;
     background-color: var(--cor-de-fundo-fechar-aviso);
-    padding: 7px;
+    padding: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 .mensagem {
     color: var(--cor-texto-aviso);
     font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+.mini-mensagem {
+    font-size: 20px;
+    text-align: center;
+}
+
+#pontos {
+    text-align: center;
+}
+
+#inicio {
+    text-align: center;
+    font-size: 50px;
+}
+
+.produtos {
+    background-color: var(--cor-da-barra-topo);
+    max-width: 1300px;
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;  
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.produtos p {
+    text-align: center;
+    font-size: 40px;
+    width: 100%;
+    margin: 10px;
+    top: 5px;
+    font-weight: bold;
+}
+
+.tipos-produtos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+#prodt {
+    background-color: var(--cor-de-fundo2);
+    margin: 10px;
+    border-radius: 7px;
+    padding: 60px;
+}
+
+.sobre {
+    background-color: var(--cor-de-fundo2);
+    border-radius: 7px;
+    max-width: 1100;
+    width: 100%;
+    padding: 50px;
+}
+
+.contato {
+    background-color: var(--cor-de-fundo2);
+    font-size: 20px;
+    border-radius: 7px;
+    max-width: 1100;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+
+table {
+    background-color: aliceblue;
+    box-shadow: 2px 4px 10px rgba(0.1, 0.2, 0.3, 0.7);
 }
 
 main p {
@@ -54,9 +157,12 @@ main p {
 
 /* Não calculei nada porque a barra não tampou o conteúdo O_o */
 main {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
+body {
+    background: linear-gradient(to bottom, var(--cor-de-fundo),  var(--cor-de-fundo2));
+}
 /*
 1) Por que foi necessário adicionar espaço extra no topo do <main>? O que aconteceria sem esse ajuste? 
 R: Esse espaço serve pra compensar o que a barra tá tampando, assim não fica nenhum conteúdo debaixo dela.
@@ -67,3 +173,4 @@ R: o fixed faz a barra ficar fixa na tela e se movimentar junto da tela, o absol
 3) Se você remover o box-sizing: border-box, o que acontece com a largura da .barra-topo ao adicionar padding?
 Explique com base na fórmula de largura total do Box Model. 
 R: Sem isso o padding ultrapaça os 100%, passando da tela.
+*/
